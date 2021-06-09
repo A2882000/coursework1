@@ -355,21 +355,38 @@
 
 
                 },
+
                 submitForm(){
-                   
-                   
-                    fetch("https://webcoursework2.herokuapp.com/collection/order", requestOptions)
-                    .then(response => response.json())
-                   .then(result => console.log(result))
-                    .catch(error => console.log('error', error));
-                    app.products.forEach(product=>{
-                        if(product.availableInventory!=0) product.availableInventory -=this.cartCount(product._id)
-                    })
-                    if (this.order.name(this.order.name)){
-                        alert('ORDER SUBMITTED,')
-                    }
-                    
-                },
+                    this.cart.array.forEach(element => {
+                        
+                    });
+                    fetch('https://webcoursework2.herokuapp.com/collection/Lesson' + element._id, {
+
+                        method: 'PUT',
+
+                        headers: {
+
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ availableInventory: element.availableInventory })}).then(function (data) {
+
+            }),
+
+            
+            fetch('https://webcoursework2.herokuapp.com/collection/Order', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ Name: this.order.name, Phone: this.order.phone, ProductsInOrder: this.cart.map(({ subject }) => subject) })}).then(function () {
+                        }   
+                        )},                     
+
+
+                
+                
+
+           
 
                 buttonvalue() {
                     if (this.cart.length > 0) {
