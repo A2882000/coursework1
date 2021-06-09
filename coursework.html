@@ -355,7 +355,7 @@
 
 
                 },
-                submit(){
+                submitForm(){
                    
                    
                     fetch("https://webcoursework2.herokuapp.com/collection/order", requestOptions)
@@ -365,7 +365,7 @@
                     app.products.forEach(product=>{
                         if(product.availableInventory!=0) product.availableInventory -=this.cartCount(product._id)
                     })
-                    if (this.user.name(this.user.name)){
+                    if (this.order.name(this.order.name)){
                         alert('ORDER SUBMITTED,')
                     }
                     
