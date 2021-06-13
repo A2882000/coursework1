@@ -5,7 +5,7 @@ let arr = [
     "description": "This is English book.",
     "location":"MANCHESTER.",
     "price": 15.00,  
-    "image": "english1.jpg",
+    "image": web/"english1.jpg",
     "availableInventory": 10,
   
   },
